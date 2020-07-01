@@ -22,7 +22,7 @@ namespace DealsiwantRepo
         public void Setup()
         {
             //Append the html report file to current project path
-            string reportPath = "C:\\Users\\deepa\\source\\repos\\NUnitProject\\Reports\\TestRunReport.html";
+            string reportPath = "C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Reports\\TestRunReport.html";
             //Boolean value for replacing exisisting report
             extent = new ExtentReports(reportPath, true);
             //Add QA system info to html report
@@ -53,7 +53,7 @@ namespace DealsiwantRepo
                 string currentDate = DateTime.Now.ToString("HH:mm:ss");
                 var image = ((ITakesScreenshot)driver).GetScreenshot();
                 //Save the screenshot
-                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\Failed SS\\" + currentDate + ".png", ScreenshotImageFormat.Png);
+                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS" + currentDate + ".png", ScreenshotImageFormat.Png);
                 test.Log(LogStatus.Fail, status + errorMessage);
             }
         }
