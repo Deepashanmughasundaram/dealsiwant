@@ -50,23 +50,32 @@ namespace DealsiwantRepo
             var errorMessage = TestContext.CurrentContext.Result.Message;
             if (status == TestStatus.Failed)
             {
-                string currentDate = DateTime.Now.ToString("HH:mm:ss");
+                string currentDate = DateTime.Now.ToString("ddMMMMyyyyHHmmss");
+
+                //  Console.WriteLine("currentDate===>" + currentDate);
+                string val = "C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\" + currentDate + ".png";
+                //  Console.WriteLine("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\"+ currentDate + ".png");
+
                 var image = ((ITakesScreenshot)driver).GetScreenshot();
                 //Save the screenshot
-                image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS" + currentDate + ".png", ScreenshotImageFormat.Png);
-                test.Log(LogStatus.Fail, status + errorMessage);
+                // image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\testing.png", ScreenshotImageFormat.Png);
+                image.SaveAsFile(val, ScreenshotImageFormat.Png);
+                test.Log(LogStatus.Fail, status + errorMessage + test.AddScreenCapture(val));
             }
+            extent.EndTest(test);
+            //  Console.WriteLine("sdsdsddsds");
         }
 
-            [OneTimeTearDown]
+        [OneTimeTearDown]
             public void Teardown()
             {
-                driver.Quit();
+              driver.Quit();
+              //End Report
+              extent.Flush();
+              extent.Close();
 
-                //End Report
-                extent.Flush();
-                extent.Close();
-            }
+              
+        }
 
         }
     }

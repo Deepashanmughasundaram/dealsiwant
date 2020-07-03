@@ -17,10 +17,10 @@ namespace DealsiwantRepo.Test.GUserTest
         {
             test = extent.StartTest("GHomePageTest");
 
-            //GenericUserMenus Methods
+            //GUserMenus Methods
             GUM.GHomeMenu();
-           // GUserHomePage GUHP = new GUserHomePage(driver);
-            //GenericUserHomePage Method
+           
+            //GUserHomePage Method
             GUHP.GCityTextbox();
             String actual = GUHP.GCityTextbox();
             Console.WriteLine(actual);
@@ -28,11 +28,13 @@ namespace DealsiwantRepo.Test.GUserTest
             GUM.GAboutUsMenu();
             GUM.GSignIn();
 
-            //GenericUserSignInPage Methods
+            //GUserSignInPage Methods
             String actual1 = GUSIP.GSigninPageheading();
             Console.WriteLine(actual1);
             Assert.AreEqual(actual1, "Register");
-            test.Log(LogStatus.Pass, "Test Passed");
+            test.Log(LogStatus.Pass, "Test Passed");            
+           
+            //GUSIP.GSignupExcelInput();
         }
 
 
