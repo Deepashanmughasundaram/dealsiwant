@@ -31,7 +31,7 @@ namespace DealsiwantRepo.Test.GUserTest
             //GUserSignInPage Methods
             String actual1 = GUSIP.GSigninPageheading();
             Console.WriteLine(actual1);
-            Assert.AreEqual(actual1, "Regisster");
+            Assert.AreEqual(actual1, "Register");
             test.Log(LogStatus.Pass, "Test Passed");            
            
             //GUSIP.GSignupExcelInput();
