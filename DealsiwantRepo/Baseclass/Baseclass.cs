@@ -64,7 +64,7 @@ namespace DealsiwantRepo
                 test.Log(LogStatus.Fail, status + errorMessage + test.AddScreenCapture(val));
             }           
             extent.EndTest(test);
-            //  Console.WriteLine("sdsdsddsds");
+             Console.WriteLine("sdsdsddsds");
         }
 
         [OneTimeTearDown]
