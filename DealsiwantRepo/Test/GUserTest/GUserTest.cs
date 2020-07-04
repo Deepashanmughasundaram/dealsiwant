@@ -33,7 +33,7 @@ namespace DealsiwantRepo.Test.GUserTest
             Console.WriteLine(actual1);
             Assert.AreEqual(actual1, "Register");
             test.Log(LogStatus.Pass, "Test Passed");
-            GUSIP.GSigninRegisterTextboxs("Deepa", "deeps.smkd@gmail.com", "D1i2y3a4", "123456789");
+            GUSIP.GSigninRegisterTextboxs("Deepa", "deeps@gmail.com", "D1i2y3a4", "123456789");
             
             
 

@@ -17,12 +17,22 @@ namespace DealsiwantRepo.Pages.GUser
       
         [FindsBy(How = How.XPath, Using = "(//input[@class='inpt'])[1]")]
         public IWebElement GSignUpRegisterNameTB;
+
         [FindsBy(How = How.XPath, Using = "(//input[@class='inpt'])[2]")]
         public IWebElement GSignUpRegisterEmailIDTB;
-        [FindsBy(How = How.XPath, Using = "(//input[@class='inpt'])[3]")]
+        [FindsBy(How = How.XPath, Using = "(//div[@class='bill_row'])[3]/span/../label")]
+        public IWebElement GSignUpRegisterEmailIDErrorMsg;
+
+        [FindsBy(How = How.XPath, Using = "(//div[@class='bill_row'])[4]/span/../input")]
         public IWebElement GSignUpRegisterPasswordTB;
-        [FindsBy(How = How.Id, Using = "mobile")]
+        [FindsBy(How = How.XPath, Using = "(//div[@class='bill_row'])[4]/span/../label")]
+        public IWebElement GSignUpRegisterPasswordErrorMsg;
+
+        [FindsBy(How = How.XPath, Using = "(//div[@class='bill_row'])[5]/span/../input")]
         public IWebElement GSignUpRegisterMobileTB;
+        [FindsBy(How = How.XPath, Using = "(//div[@class='bill_row'])[5]/span/../label")]
+        public IWebElement GSignUpRegisterMobileErrorMsg;
+
         [FindsBy(How = How.Name, Using = "submit")]
         public IWebElement GSubmitButton;
         [FindsBy(How = How.XPath, Using = "//span[@style='color:#6600FF']/text()")]
@@ -44,14 +54,28 @@ namespace DealsiwantRepo.Pages.GUser
         public void GSigninRegisterTextboxs(String NameTB, String EmailTB, String PasswordTB, String MobileTB)
         {
             GSignUpRegisterNameTB.SendKeys(NameTB);
-            GSignUpRegisterEmailIDTB.SendKeys(EmailTB);
+            GSignUpRegisterEmailIDTB.SendKeys(EmailTB);            
+            Thread.Sleep(1000);           
             GSignUpRegisterPasswordTB.SendKeys(PasswordTB);
             Thread.Sleep(1000);
             GSignUpRegisterMobileTB.SendKeys(MobileTB);
             GSubmitButton.Click();
+/*            string EmailErrorMsg = GSignUpRegisterEmailIDErrorMsg.Text;
+            if (EmailErrorMsg.Equals("deeps.smkd@gmail.com is already in use"))
+            {
+                Console.WriteLine("Try Different Email ID");
+            }
+            else 
+            {
+                bool PasswordErrorMsg = GSignUpRegisterPasswordErrorMsg.Displayed;
+                Console.WriteLine("Try Different Password");
+            } 
+            bool MobileErrorMsg = GSignUpRegisterMobileErrorMsg.Displayed;
+            
+
             String SuccessMsg = GSuccessfulRegistrationMsg.Text;
             Console.WriteLine(SuccessMsg);           
-        }
+*/        }
 
 
         /*        public void GSignupExcelInput()
