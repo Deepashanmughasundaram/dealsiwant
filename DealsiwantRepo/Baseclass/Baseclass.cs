@@ -48,12 +48,13 @@ namespace DealsiwantRepo
             var status = TestContext.CurrentContext.Result.Outcome.Status;
             var stackTrace = "" + TestContext.CurrentContext.Result.StackTrace + "";
             var errorMessage = TestContext.CurrentContext.Result.Message;
+            
             if (status == TestStatus.Failed)
             {
                 string currentDate = DateTime.Now.ToString("ddMMMMyyyyHHmmss");
 
                 //  Console.WriteLine("currentDate===>" + currentDate);
-                string val = "C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\" + currentDate + ".png";
+                 string val = "C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\" + currentDate + ".png";
                 //  Console.WriteLine("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\"+ currentDate + ".png");
 
                 var image = ((ITakesScreenshot)driver).GetScreenshot();
@@ -61,7 +62,7 @@ namespace DealsiwantRepo
                 // image.SaveAsFile("C:\\Users\\deepa\\source\\repos\\DealsiwantRepo\\DealsiwantRepo\\Failed SS\\testing.png", ScreenshotImageFormat.Png);
                 image.SaveAsFile(val, ScreenshotImageFormat.Png);
                 test.Log(LogStatus.Fail, status + errorMessage + test.AddScreenCapture(val));
-            }
+            }           
             extent.EndTest(test);
             //  Console.WriteLine("sdsdsddsds");
         }

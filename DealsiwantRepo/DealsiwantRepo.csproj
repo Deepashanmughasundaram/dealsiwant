@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Failed SS\" />
+    <Folder Include="Pages\LoginUser\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>

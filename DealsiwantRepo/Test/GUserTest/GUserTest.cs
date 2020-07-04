@@ -32,8 +32,12 @@ namespace DealsiwantRepo.Test.GUserTest
             String actual1 = GUSIP.GSigninPageheading();
             Console.WriteLine(actual1);
             Assert.AreEqual(actual1, "Register");
-            test.Log(LogStatus.Pass, "Test Passed");            
-           
+            test.Log(LogStatus.Pass, "Test Passed");
+            GUSIP.GSigninRegisterTextboxs("Deepa", "deeps.smkd@gmail.com", "D1i2y3a4", "123456789");
+            
+            
+
+
             //GUSIP.GSignupExcelInput();
         }
 
